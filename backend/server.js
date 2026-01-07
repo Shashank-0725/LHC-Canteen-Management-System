@@ -40,7 +40,8 @@ app.use(express.static(path.join(__dirname, '..', 'frontend')));
 
 // Handle SPA-like routing (optional but good)
 // Send index.html for any unknown routes (that aren't /api)
-app.get('*', (req, res) => {
+// FIX: Using '/*' for compatible wildcard in Node 22/Express
+app.get('/*', (req, res) => {
   if (!req.path.startsWith('/api')) {
     res.sendFile(path.join(__dirname, '..', 'frontend', 'index.html'));
   }
