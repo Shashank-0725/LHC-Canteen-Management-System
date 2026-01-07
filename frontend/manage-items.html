@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Items - BVB Canteen</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="brand">MANAGE ITEMS</div>
+    <button class="nav-toggle" onclick="openNav()">☰</button>
+    <div class="nav-links">
+      <a href="staff-dashboard.html">DASHBOARD</a>
+      <a href="staff-orders.html">ORDERS</a>
+      <a href="manage-items.html">MANAGE ITEMS</a>
+      <a href="staff-stats.html">STATISTICS</a>
+      <a href="#" onclick="logout()">LOGOUT</a>
+    </div>
+  </nav>
+
+  <div class="side-nav" id="sideNav">
+    <button class="close-nav" onclick="closeNav()">×</button>
+    <a href="staff-dashboard.html">DASHBOARD</a>
+    <a href="manage-items.html">MANAGE ITEMS</a>
+    <a href="staff-stats.html">STATISTICS</a>
+    <a href="#" onclick="logout()">LOGOUT</a>
+  </div>
+  <div class="overlay" id="overlay" onclick="closeNav()"></div>
+
+  <div class="container">
+    <h2 class="section-title">ADD NEW ITEM</h2>
+
+    <form id="itemForm" onsubmit="return handleAddItem(event)">
+      <div class="form-group">
+        <label for="itemName">NAME</label>
+        <input type="text" id="itemName" required>
+      </div>
+      <div class="form-group">
+        <label for="itemCategory">CATEGORY</label>
+        <select id="itemCategory" required>
+          <option value="snacks">SNACKS</option>
+          <option value="meals">MEALS</option>
+          <option value="beverages">BEVERAGES</option>
+          <option value="sweets">SWEETS</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="itemPrice">PRICE (₹)</label>
+        <input type="number" id="itemPrice" min="0" required>
+      </div>
+      <div class="form-group">
+        <label for="itemAvgTime">AVG. TIME (e.g. 15 mins)</label>
+        <input type="text" id="itemAvgTime" placeholder="10-15 mins">
+      </div>
+      <div class="form-group">
+        <label for="itemImage">IMAGE</label>
+        <input type="file" id="itemImage" name="image" accept="image/*">
+      </div>
+      <div class="form-group">
+        <label for="itemStock">IN STOCK</label>
+        <select id="itemStock">
+          <option value="true">YES</option>
+          <option value="false">NO</option>
+        </select>
+      </div>
+      <p class="error-msg" id="manageError" style="display:none;">ERROR</p>
+      <button type="submit" class="btn-submit">SAVE ITEM</button>
+    </form>
+
+    <h2 class="section-title" style="margin-top:40px;">ALL MENU ITEMS</h2>
+    <div id="items-empty" class="text-center" style="display:none;">
+      NO ITEMS FOUND.
+    </div>
+    <div id="items-list" class="grid">
+      <!-- JS will inject menu item cards here -->
+    </div>
+  </div>
+
+  <footer>
+    © 2025 BVB CANTEEN - STAFF PORTAL
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initManageItemsPage();
+    });
+  </script>
+</body>
+
+</html>

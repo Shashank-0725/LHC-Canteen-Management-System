@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff Orders - BVB Canteen</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="brand">STAFF ORDERS</div>
+    <button class="nav-toggle" onclick="openNav()">☰</button>
+    <div class="nav-links">
+      <a href="staff-dashboard.html">DASHBOARD</a>
+      <a href="staff-orders.html">ORDERS</a>
+      <a href="manage-items.html">MANAGE ITEMS</a>
+      <a href="staff-stats.html">STATISTICS</a>
+      <a href="staff-login.html" onclick="logout()">LOGOUT</a>
+    </div>
+  </nav>
+
+  <div class="side-nav" id="sideNav">
+    <button class="close-nav" onclick="closeNav()">×</button>
+    <a href="staff-dashboard.html">DASHBOARD</a>
+    <a href="staff-orders.html">ORDERS</a>
+    <a href="manage-items.html">MANAGE ITEMS</a>
+    <a href="staff-stats.html">STATISTICS</a>
+    <a href="staff-login.html" onclick="logout()">LOGOUT</a>
+  </div>
+  <div class="overlay" id="overlay" onclick="closeNav()"></div>
+
+  <div class="container">
+    <h2 class="section-title">PENDING / PREPARING</h2>
+    <div id="staff-orders-pending-empty" class="text-center" style="display:none;">
+      NO PENDING OR PREPARING ORDERS.
+    </div>
+    <div id="staff-orders-pending" class="grid"></div>
+
+    <h2 class="section-title" style="margin-top:40px;">READY</h2>
+    <div id="staff-orders-ready-empty" class="text-center" style="display:none;">
+      NO READY ORDERS.
+    </div>
+    <div id="staff-orders-ready" class="grid"></div>
+
+    <h2 class="section-title" style="margin-top:40px;">COMPLETED</h2>
+    <div id="staff-orders-completed-empty" class="text-center" style="display:none;">
+      NO COMPLETED ORDERS.
+    </div>
+    <div id="staff-orders-completed" class="grid"></div>
+
+    <h2 class="section-title" style="margin-top:40px;">CANCELLED</h2>
+    <div id="staff-orders-cancelled-empty" class="text-center" style="display:none;">
+      NO CANCELLED ORDERS.
+    </div>
+    <div id="staff-orders-cancelled" class="grid"></div>
+  </div>
+
+  <footer>
+    © 2025 BVB CANTEEN - STAFF PORTAL
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initStaffOrdersPage();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff Dashboard - BVB Canteen</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="brand">STAFF DASHBOARD</div>
+    <button class="nav-toggle" onclick="openNav()">☰</button>
+    <div class="nav-links">
+      <a href="staff-dashboard.html">DASHBOARD</a>
+      <a href="staff-orders.html">ORDERS</a>
+      <a href="manage-items.html">MANAGE ITEMS</a>
+      <a href="staff-stats.html">STATISTICS</a>
+      <a href="staff-login.html" onclick="logout()">LOGOUT</a>
+    </div>
+  </nav>
+
+  <div class="side-nav" id="sideNav">
+    <button class="close-nav" onclick="closeNav()">×</button>
+    <a href="staff-dashboard.html">DASHBOARD</a>
+    <a href="staff-orders.html">ORDERS</a>
+    <a href="manage-items.html">MANAGE ITEMS</a>
+    <a href="staff-stats.html">STATISTICS</a>
+    <a href="staff-login.html" onclick="logout()">LOGOUT</a>
+  </div>
+  <div class="overlay" id="overlay" onclick="closeNav()"></div>
+
+  <div class="hero">
+    <h1>STAFF DASHBOARD</h1>
+    <p>MANAGE MENU ITEMS, ORDERS & AVAILABILITY</p>
+  </div>
+
+  <div class="container">
+    <h2 class="section-title">QUICK ACTIONS</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=400" alt="Manage">
+        <div class="card-body">
+          <h3>MANAGE MENU</h3>
+          <p>ADD, EDIT, OR DELETE MENU ITEMS</p>
+          <a href="manage-items.html" class="btn btn-add">MANAGE</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400" alt="Orders">
+        <div class="card-body">
+          <h3>VIEW ORDERS</h3>
+          <p>TRACK PENDING & COMPLETED ORDERS</p>
+          <a href="staff-orders.html" class="btn btn-add">VIEW ORDERS</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400" alt="Analytics">
+        <div class="card-body">
+          <h3>SALES REPORT</h3>
+          <p>VIEW DAILY SALES & ANALYTICS</p>
+          <a href="staff-stats.html" class="btn btn-add">VIEW REPORT</a>
+        </div>
+      </div>
+    </div>
+
+
+  <footer>
+    © 2025 BVB CANTEEN - STAFF PORTAL
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initStaffDashboard();
+    });
+  </script>
+</body>
+</html>
